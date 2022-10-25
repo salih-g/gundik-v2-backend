@@ -1,0 +1,22 @@
+{
+	"name": "gundik-v2-backend",
+	"version": "1.0.0",
+	"main": "src/",
+	"repository": "https://github.com/salih-g/gundik-v2-backend",
+	"author": "M.Salih.Gumus",
+	"license": "MIT",
+	"engines": {
+		"node": ">=12.0.0"
+	},
+	"scripts": {
+		"start": "pm2 start ecosystem.config.json --no-daemon",
+		"dev": "NODE_ENV=development nodemon src/index.js"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.20",
+		"prisma": "^4.5.0"
+	},
+	"dependencies": {
+		"pm2": "^5.2.2"
+	}
+}
