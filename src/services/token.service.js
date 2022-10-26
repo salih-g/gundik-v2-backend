@@ -4,20 +4,20 @@ const moment = require('moment');
 const config = require('../utils/config');
 
 const generateToken = (
-	userId,
+	roomId,
 	type = config.tokenTypes.ACCESS,
 	secret = config.jwt.accessSecret,
 ) => {
 	const payload = {
-		sub: userId,
+		sub: roomId,
 		iat: moment().unix(),
 		type,
 	};
 	return jwt.sign(payload, secret);
 };
 
-const generateAuthTokens = async (user) => {
-	return generateToken(user.id);
+const generateAuthTokens = async (room) => {
+	return generateToken(room.id);
 };
 
 const verifyToken = async (token) =>
